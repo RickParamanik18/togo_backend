@@ -1,0 +1,27 @@
+{
+    "name": "togo_backend",
+    "version": "1.0.0",
+    "description": "This is the backend of TOGO",
+    "main": "index.js",
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RickParamanik18/togo_backend.git"
+    },
+    "author": "Rick Paramanik",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/RickParamanik18/togo_backend/issues"
+    },
+    "homepage": "https://github.com/RickParamanik18/togo_backend#readme",
+    "dependencies": {
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "mongoose": "^8.0.3"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.2"
+    }
+}
