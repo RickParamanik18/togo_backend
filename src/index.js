@@ -1,6 +1,7 @@
 import express from "express";
 import "dotenv/config";
 import cors from "cors";
+import "./config/db.cofig.js";
 
 const app = express();
 
