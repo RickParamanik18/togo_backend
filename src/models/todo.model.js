@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = mongoose.Schema(
+const todoSchema = mongoose.Schema(
     {
         creatorId: {
             type: String,
@@ -20,5 +20,5 @@ const userSchema = mongoose.Schema(
     { timeStamps: true }
 );
 
-const User = mongoose.model("user", userSchema);
-export default User;
+const Todo = mongoose.model("todo", todoSchema);
+export default Todo;

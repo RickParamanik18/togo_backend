@@ -5,8 +5,8 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "node src/index.js",
-        "dev": "nodemon src/index.js"
+        "start": "SET NODE_ENV=development & src/index.js",
+        "dev": "SET NODE_ENV=development & nodemon src/index.js"
     },
     "repository": {
         "type": "git",
