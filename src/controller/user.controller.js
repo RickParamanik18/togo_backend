@@ -7,7 +7,13 @@ const signin = asyncHandler(async (req, res) => {
 
     const data = await userServices.signin(bodyParams);
 
-    res.send(new ApiResponse(200, "Success", data));
+    res.status(data ? 200 : 400).json(
+        new ApiResponse(
+            data ? 200 : 400,
+            data ? "signin successful" : "user already exists",
+            data
+        )
+    );
 });
 
 export default { signin };

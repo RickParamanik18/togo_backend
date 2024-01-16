@@ -1,7 +1,7 @@
 import User from "../models/user.model.js";
-const signin = async (data) => {
+const createUser = async (data) => {
     const { name, email, password, todos = [] } = data;
-    console.log(process.env.DB_URI);
+
     const newUser = new User({
         name,
         email,
@@ -9,7 +9,12 @@ const signin = async (data) => {
         todos,
     });
     const userRecord = await newUser.save();
-    return { name: "rick", ...data };
+    return userRecord;
 };
 
-export default { signin };
+const getUser = async (email) => {
+    const userData = await User.findOne({ email });
+    return userData;
+};
+
+export default { createUser, getUser };
