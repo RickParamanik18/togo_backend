@@ -8,7 +8,6 @@ const signin = async (params) => {
     userData = await userRepository.createUser(params);
     userData = userData.toObject();
     delete userData.password;
-    //send token
 
     return userData;
 };
