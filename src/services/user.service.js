@@ -12,4 +12,14 @@ const signin = async (params) => {
     return userData;
 };
 
-export default { signin };
+const login = async (params) => {
+    // getting users data
+    let userData = await userRepository.getUser(params.email);
+
+    if (!userData) return null;
+    userData = userData.toObject();
+
+    if (params.password === userData.password) return userData;
+    else return null;
+};
+export default { signin, login };

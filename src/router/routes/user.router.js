@@ -10,5 +10,9 @@ router.post(
     paramsChecker(["name", "email", "password"]),
     asyncHandler(userController.signin)
 );
-
+router.post(
+    "/login",
+    paramsChecker(["email", "password"]),
+    asyncHandler(userController.login)
+);
 export default router;

@@ -25,4 +25,25 @@ const signin = asyncHandler(async (req, res) => {
     );
 });
 
-export default { signin };
+const login = asyncHandler(async (req, res) => {
+    const bodyParams = req.body;
+
+    const data = await userServices.login(bodyParams);
+
+    //sending cookie
+    if (data) {
+        const token = jwt.sign(data, process.env.JWT_SECRET);
+        res.cookie("authorization", token, { maxAge: 1000 * 60 * 60 * 24 });
+        res.cookie("userData", data, { maxAge: 1000 * 60 * 60 * 24 });
+    }
+
+    res.status(data ? 200 : 400).json(
+        new ApiResponse(
+            data ? 200 : 400,
+            data ? "login successful" : "login failed",
+            data
+        )
+    );
+});
+
+export default { signin, login };
